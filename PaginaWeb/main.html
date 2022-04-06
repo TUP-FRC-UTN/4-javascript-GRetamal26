@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>RShare</title>
+  </head>
+  <link rel="stylesheet" href="/estilos/imagenes.css">
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">RShare</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resena">Crea tu reseña</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Reseñas de usuarios
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Morbious</a></li>
+                <li><a class="dropdown-item" href="#eldenring">Elden Ring</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Otras reseñas</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Proximamente</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Buscador" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid bg-primary py-5" id="display">
+        <div class="container text-black ">
+          <h1 class="display-3" ><b>Review Share</b></h1>
+          <p class="lead">Reseñas por usuarios para usuarios</p>
+        </div>
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" >
+          <img src="/Imagenes/eldenring.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <a href="#eldenring"><h5>Elden Ring</h5></a>
+            <p>Review por @UnUsuarioComun</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/Imagenes/morbious.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <a href="#morbius"><h5>Morbius</h5></a>
+            <p>Review por @FanDeMarvel123</p>
+          </div>
+        </div>        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="container row g-3 col-md-6 form-group" id="eldenring">
+    <p class="h3">Elden Ring - 10</p>
+    <p class="lead ">
+        Después de 100 horas que marca el contador del juego, puedo decir que conozco Elden Ring. Es extraño esto. 
+        El juego está hecho conscientemente para que te sientas perdido. Su misticismo radica en lo hermético que es. 
+        Algunos de los lugares y misiones más espectaculares y largos del juego se esconden de la misma forma que otro videojuego escondería un coleccionable.
+       Y, una vez que lo has completado todo (o casi todo, las primeras partidas a los juegos de FromSoftware son peculiares) el misterio inevitablemente se pierde 
+       y se transforma en otra cosa: en recuerdo de tus gestas. Has vuelto a Ítaca, pero diferente. Ya no eres el mismo.
+    </p>
+    <p class="h8">@UnUsuarioComun</p>
+    <div  class="form-group col-md-3 col-sm-5">
+     <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+     <label class="btn btn-primary" for="btn-check-2">Videojuego</label>
+    </div>
+    <div  class="form-group col-md-2 col-sm-3">
+      <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+      <label class="btn btn-primary" for="btn-check-2">Accion</label>
+     </div>
+     <div  class="form-group col-md-2 col-sm-3">
+      <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+      <label class="btn btn-primary" for="btn-check-2">Fantasia</label>
+     </div>
+    </div>
+    <div class="container row g-3 col-md-6 form-group" id="morbius">
+      <p class="h3">Morbius - 4</p>
+      <p class="lead ">
+        Los personajes están muy mal definidos. El protagonista cambia de personalidad y humor de una escena a otra y sus motivaciones se sienten como simples excusas para la trama.
+         Aunque los reportes dicen que Jared Leto es una persona insoportable en los sets de grabación, la verdad es que es un actor talentoso.
+          Pero no hay talento que sirva para hacer interesante a un personaje creado con base en clichés. Adria Arjona está aún peor en el rol de un interés romántico absolutamente descartable,
+          innecesario y con menos personalidad que la más genérica de las damiselas en apuros.
+      </p>
+      <p class="h8">@FanDeMarvel123</p>
+      <div  class="form-group col-md-3 col-sm-5">
+       <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+       <label class="btn btn-primary" for="btn-check-2">Pelicula</label>
+      </div>
+      <div  class="form-group col-md-2 col-sm-3">
+        <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+        <label class="btn btn-primary" for="btn-check-2">Accion</label>
+       </div>
+       <div  class="form-group col-md-2 col-sm-3">
+        <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+        <label class="btn btn-primary" for="btn-check-2">Fantasia</label>
+       </div>
+      </div>    
+    <form action="" id="resena">      
+      <div class="container form-row row g-3 ">
+        <h3>Reseña:</h3>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="tipo">Seleccione tipo:</label>
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="tipo" id="tipop" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="tipop">Pelicula</label>
+          
+            <input type="radio" class="btn-check" name="tipo" id="tipos" autocomplete="off">
+            <label class="btn btn-outline-primary" for="tipos">Serie</label>
+          
+            <input type="radio" class="btn-check" name="tipo" id="tipov" autocomplete="off">
+            <label class="btn btn-outline-primary" for="tipov">Videojuego</label>
+          </div>
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label for="titulo">Titulo:</label>
+          <input type="text" name="titulo" id="titulo" class="form-control">
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label for="usuario">Su nombre de usuario:</label>
+          <input type="text" name="usuario" id="titulo" class="form-control">
+        </div>
+        <div class="form-group col-md-6 col-sm-3">
+          <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic checkbox toggle button group">
+            <label for="titulo">Seleccione otras categorias:</label>
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck1">Accion</label>
+          
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck2">Fantasia</label>
+          
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck3">Comedia</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck4">Suspenso</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck5">Terror</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck6">Otros</label>
+          </div>        
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label for="pais"> Ingrese fecha de lanzamiento:</label>
+          <input type="date" name="fecha-salida" id="fecha-salida" >      
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+          <label for="pais"> Ingrese su nota:</label>
+          <input type="number" name="nota" id="nota" min="1" max="10">      
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+          <label for="pais"> Ingrese su reseña:</label>
+          <textarea name="reseña" id="reseña" cols="40" rows="5" placeholder="Ingrese aqui la reseña..." class="form-control"></textarea>      
+        </div>        
+        <div class="form-group col-md-3 col-sm-12">
+          <button type="submit" class="btn btn-primary">Mandar reseña</button>
+          <button type="reset" class="btn btn-danger">Cancelar</button>
+        </div>
+      </div>
+    </form>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+  <title>Clase 4 - Javascript</title>
+</head>
+
+<body>
+  <h1>Reseña:</h1>
+  <div>
+    
+    <form action="/" method="post">
+        Seleccione tipo:<br>
+        <input type="radio" name="tipo" id="tipo" value="1">Pelicula<br>
+        <input type="radio" name="tipo" id="tipo" value="2">Serie<br>
+        <input type="radio" name="tipo" id="tipo" value="3">Videojuego<br>
+        <br>
+        Titulo:<br>
+        <input type="text" name="titulo" id="titulo" placeholder="Ingrese Titulo"><br>
+        <br>        
+        <br>
+        Seleccione otras categorias:<br>
+        <input type="checkbox" name="categorias" id="categorias">Accion<br>
+        <input type="checkbox" name="categorias" id="categorias">Fantasia<br>
+        <input type="checkbox" name="categorias" id="categorias">Comedia<br>
+        <input type="checkbox" name="categorias" id="categorias">Suspenso<br>
+        <input type="checkbox" name="categorias" id="categorias">Terror<br>
+        <input type="checkbox" name="categorias" id="categorias">Otros<br>
+        <br>
+        Ingrese fecha de lanzamiento:<br>
+        <input type="date" name="fecha-salida" id="fecha-salida">
+        <br>
+        <br>
+        Ingrese su nota: <br>
+        <input type="number" name="nota" id="nota" min="1" max="10"><br>
+        <br>
+        Ingrese su reseña: 
+        <p id="caracRestantes">Quedan 100 caracteres</p>
+        <textarea onkeyup="caracteresRestantes();" name="reseña" id="reseña" cols="40" rows="20" placeholder="Ingrese aqui la reseña..."></textarea>
+        <br> 
+        <button type="button" onclick="validarForm();">Validar reseña</button>       
+        <button type="submit" onclick="GuardarDatos();">Mandar reseña</button>
+        <button type="reset">Cancelar</button>
+      </form>
+    </div>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+  <script>
+      function validarForm(){
+        var txtTitulo = document.getElementById('titulo');
+        var txtNota = document.getElementById('nota');
+        var txtReseña = document.getElementById('reseña');
+        var radioTipos = document.getElementsByName('tipo');
+        var checkCategorias = document.getElementsByName('categorias');
+        var fechaSalida = document.getElementById('fecha-salida');
+        var caracRestantes = document.getElementById('caracRestantes');
+        
+        
+        /* if(txtNombre.value === '' || txtApellido.value === ''){
+          alert('Falta un campo obligatorio!');
+          return false;
+        } */
+        if(txtTitulo.value === '' ){
+          swal('Titulo es un campo obligatorio!');
+          return false;
+        }
+        if(fechaSalida.value === '' ){
+          swal('La fecha es un campo obligatorio!');
+          return false;
+        }
+
+        if(txtNota.value === '' ){
+          swal('Nota es un campo obligatorio!');
+          return false;
+        }
+        if(txtReseña.value === '' ){
+          swal('Reseña es un campo obligatorio!');
+          return false;
+        }
+        /* Hacer un contador de caracteres */
+        else if(txtReseña.value.length > 100){
+          swal('Reseña tiene un limite de 100 caracteres!');
+          return false;
+        }
+        var algunoSeleccionado = false;
+        for(var i = 0; i < radioTipos.length; i++){
+          if(radioTipos[i].checked){
+            var algunoSeleccionado = true;
+            break;
+          }
+        }
+
+        if(algunoSeleccionado == false){
+          swal('Debe seleccionar un tipo!');
+          return false;
+        }
+
+        var algunaCategoria = false;
+        for(var i = 0; i < checkCategorias.length; i++){
+          if(checkCategorias[i].checked){
+            var algunaCategoria = true;
+            break;
+          }
+        }
+
+        if(algunaCategoria == false){
+          swal('Debe seleccionar al menos una categoria!');
+          return false;
+        }
+        
+        swal('Todo correcto!')
+        
+
+      }
+      var caracteres = 100;
+      function caracteresRestantes(){
+        let txtReseña = document.getElementById('reseña')
+        document.getElementById('caracRestantes').innerHTML = "Quedan " + (100 - txtReseña.value.length) + " caracteres";
+
+      }
+      function GuardarDatos(){
+          if(validarForm() == true){
+            swal('Guardando datos...');
+          }
+          else{
+            swal('No se pudo guardar los datos!');
+            return false;
+          }
+      }
+
+  </script>
+</body>
+
+</html>
